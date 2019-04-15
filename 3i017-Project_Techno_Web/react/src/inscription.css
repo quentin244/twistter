@@ -1,0 +1,61 @@
+header{
+    background: radial-gradient(deepskyblue,white,gold);
+}
+h1{
+    text-align: center;
+}
+ul{
+    list-style: none;
+}
+ #inscription{
+    display: flex;
+    justify-content: center;  
+}
+.champ{
+    /* align-content: center; */
+    display: inline-flex;
+    flex-direction: column;
+    border: dashed deepskyblue;
+	padding: 5px 0 5px 4px;
+}
+.ligne_1{
+    display: inline-flex;
+    text-align: center;
+	padding: 0;
+}
+.colonne{
+    display:flex;
+    flex-direction: column;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.code_info{
+	padding: 0;
+	width: 360px;
+}
+.left_side{
+    display: inline-flex;
+    min-width: 10em;
+	margin: 0 14px 0 4px;
+}
+.bouton{
+    display: flex;
+    justify-content: center;
+}
+button{
+    margin-left: 50px;
+    margin-right:50px;
+	margin-top: 4px;
+}
+.code_input{
+    margin: 0 5px 4px 0;
+	width: 150px;
+}
+#id_input_1{
+	margin: 0 9px 4px 0;
+	width: 150px;
+}
+#id_input_2{
+	margin: 0 5px 4px 0;
+	width: 150px;
+}

@@ -1,0 +1,99 @@
+header{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    margin: 0 0 1% 0;
+    background: radial-gradient(deepskyblue,white,gold);
+
+}
+
+#logo{
+    width: 10%;;
+    margin: auto;
+    margin-left: 1%;
+    border: 2px dashed black;
+    padding: 2px;
+}
+.zone_recherche{
+    align-content: center;
+    margin: 0 25%;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items: center;
+}
+#recherche_text{
+    align-content: center;
+    margin: auto;
+    width: 100%;
+}
+#recherche_button{
+    width: auto;
+    margin: auto;
+}
+#deco{
+    width: 10%;
+    margin: auto;
+    margin-right: 1%;
+    border: 2px dashed black;
+    padding: 2px;
+}
+.lecture{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    text-align: center;
+}
+.stat{
+    margin-left: 1%;
+    border: 1px solid black;
+    padding: 2px;
+    width: 10%;
+    height: auto;
+    display: inline-block;
+    align-content: center;
+    background: linear-gradient(white,gold);
+}
+.message{
+    width: 80%;
+    height: auto;
+    border: 1px solid black;
+    padding: 2px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(0.25turn,gold,white,deepskyblue,white,gold)
+}
+.zone_nouveau_message{
+    align-content: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+#nouveau_message_text{
+    width: 50%;
+    margin: auto;
+    margin-top: 3px;
+}
+#nouveau_message_button{
+    width: auto;
+    margin: auto;
+}
+.liste_messages{
+    margin-top: 1%;
+}
+.message_affiche{
+    background: white;
+    border: 1px dotted black;
+}
+.amis{
+    margin-right: 1%;
+    border: 1px solid black;
+    padding: 2px;
+    width: 10%;
+    height: auto;
+    align-content: center;
+    background: linear-gradient(white,gold);
+}
