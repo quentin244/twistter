@@ -41,25 +41,27 @@ public class Message {
 	// 	- Si login et clé non nuls -> retourne tous les messages de l'ami (si c'en est un)
 	public static JSONObject listeMessage(String key, String login) throws JSONException {
 		JSONObject liste = new JSONObject();
-		
 		try {
-			int id = DBTools.lookForId_Session(key);
-			String new_key = ServicesTools.createConnectionKey();
-			while(DBTools.checkKey(new_key)) {new_key = ServicesTools.createConnectionKey();}
-			DBTools.updateConnection(key,new_key);
-			liste.put("Key", new_key);
 			Document rep = new Document();
-			
-			if(key==null && login==null) {rep = DBTools.lookForAllMessages();}
-			else if(login==null) {rep = DBTools.lookForSelfMessages(key);}
+			if(key==null && login==null) {
+				rep = DBTools.lookForAllMessages();
+			}
 			else {
-				if(!DBTools.checkFriend(login, id)) {return ServicesTools.serviceRefused("No Such Friend", -1);}
-				else {rep = DBTools.lookForFriendMessages(login);}
+				int id = DBTools.lookForId_Session(key);
+				if(login==null) {rep = DBTools.lookForSelfMessages(key);}
+				else {
+					if(!DBTools.checkFriend(login, id)) {return ServicesTools.serviceRefused("No Such Friend", -1);}
+					else {rep = DBTools.lookForFriendMessages(login);}
+					
+					String new_key = ServicesTools.createConnectionKey();
+					while(DBTools.checkKey(new_key)) {new_key = ServicesTools.createConnectionKey();}
+					DBTools.updateConnection(key,new_key);
+					liste.put("Key", new_key);
+				}
 			}
 			
-			liste.put("Key", new_key);
-			ServicesTools.serviceAccepted(liste);
 			liste.put("Liste", rep);
+			ServicesTools.serviceAccepted(liste);
 			
 		}catch(JSONException j) { return ServicesTools.serviceRefused("JSON Problem : "+j.getMessage(), 100);
 		}catch(SQLException s) { return ServicesTools.serviceRefused("DataBase Problem : "+s.getMessage(), 1000);}

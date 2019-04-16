@@ -1,7 +1,9 @@
 package ServicesTools;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -11,8 +13,6 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
 
 public class DBTools {
 	

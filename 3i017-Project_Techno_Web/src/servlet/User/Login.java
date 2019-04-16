@@ -41,7 +41,7 @@ public class Login extends HttpServlet {
 			e.printStackTrace();
 		}
 				
-		response.setContentType("text/plain");
+		response.setContentType("application/json");
 		PrintWriter out = response.getWriter();
 		
 		out.print(rep.toString());

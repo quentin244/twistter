@@ -41,7 +41,7 @@ public class Logout extends HttpServlet {
 		}catch (SQLException e) {e.printStackTrace();
 		}
 		
-		response.setContentType("text/plain");
+		response.setContentType("application/json");
 		PrintWriter out = response.getWriter();
 		
 		out.print(rep.toString());

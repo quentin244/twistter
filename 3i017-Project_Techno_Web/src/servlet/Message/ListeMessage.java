@@ -39,7 +39,7 @@ public class ListeMessage extends HttpServlet {
 			rep = services.Message.listeMessage(key, login);
 		}catch(JSONException e) {e.printStackTrace();}
 		
-		response.setContentType("text/plain");
+		response.setContentType("application/json");
 		PrintWriter out = response.getWriter();
 		
 		out.print(rep.toString());

@@ -39,7 +39,7 @@ public class AddFriend extends HttpServlet {
 			rep = services.Relation.addFriend(key, id_friend);
 		}catch(JSONException e) {e.printStackTrace();}
 		
-		response.setContentType("text/plain");
+		response.setContentType("application/json");
 		PrintWriter out = response.getWriter();
 		
 		out.print(rep.toString());
