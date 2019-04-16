@@ -61,6 +61,9 @@ public class Relation {
 		try {
 			if(!DBTools.checkKey(key)) {return ServicesTools.serviceRefused("Connection required", -1);}
 			if(!DBTools.checkId(id_friend)) { return ServicesTools.serviceRefused("No Such User", -1);}
+			String login_friend = DBTools.lookForLogin_User(id_friend);
+			int id_self = DBTools.lookForId_Session(key);
+			if(!DBTools.checkFriend(login_friend,id_self)) { return ServicesTools.serviceRefused("No Such Friend", -1);}
 			
 			String new_key = ServicesTools.createConnectionKey();
 			while(DBTools.checkKey(new_key)) {new_key = ServicesTools.createConnectionKey();}
@@ -72,7 +75,7 @@ public class Relation {
 			oldFriend.put("message",friend+" n'est plus votre ami");
 			oldFriend.put("Key",new_key);
 			
-			int id_self = DBTools.lookForId_Session(new_key);
+			id_self = DBTools.lookForId_Session(new_key);
 			DBTools.removeFriend(id_self, id_friend);
 			
 		}catch(JSONException j) { return ServicesTools.serviceRefused("JSON Problem : "+j.getMessage(), 100);

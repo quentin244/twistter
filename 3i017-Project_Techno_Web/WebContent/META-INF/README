@@ -1,0 +1,40 @@
+
+# Projet 3i017 : Twister
+
+L'application Twister (désignation non officielle) est une imitation de réseau social de type Twitter créée dans le cadre de l'UE 3i017 "Technologies du Web".
+
+# Fonctionnalités
+
+L'application Twister fournie à tous ses utilisateurs les fonctionnalités suivantes :
+	- La création d'un nouveau compte unique pour se différencier des autres utilisateurs.
+	- La connexion (ainsi que la déconnexion) à ce compte afin d'interagir (et arrêter d'interagir) avec l'application.
+	- L'écriture de messages qui pourront être lus par les autres utilisateurs.
+	- L'ajout (et la suppression) d'autres utilisateurs à une liste d'amis afin de retrouver facilement leurs profils.
+	- La récupération de messages sous forme de listes triées selon des critères choisis par l'utilisateur.
+
+# Composants et supports
+
+Twister est une application orientée services. En tant que telle, son utilisation se fait au travers de servlets, lesquels interagissent avec deux bases de données distinctes :
+	- Une base SQL standard qui contient les données à flux "lent" (les login, les mots de passes, les relations d'amitié et les clés de connexion).
+	- Une base MongoBD qui se charge des données à flux "rapide" (les messages) sous forme de documents.
+L'application fonctionne sur les supports Tomcat et React (ce dernier utilise l'extension axios).
+
+# Installation
+
+Charger la base de données SQL :
+	- mysql -u root -p
+	- Enter Password : root
+	- create database Gherdol_Joubert;
+	- exit
+	- AU CHOIX :
+		mysql -u root -p Gherdol_Joubert < Techno_Web_BD_vide.sql  ## Pour une base de données neuve
+		mysql -u root -p Gherdol_Joubert < Techno_Web_BD_test.sql  ## Pour une base de données contenant 3 comptes et 2 relations d'amitié
+	
+Charger l'application sur React :
+	- create-react-app jg_twister
+	- npm install axios
+	- npm start
+
+# Auteurs
+
+Cette application a été mise au point par Quenti Joubert et Valentin Gherdol.
